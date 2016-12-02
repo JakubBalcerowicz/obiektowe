@@ -14,7 +14,7 @@ void dodaj(int i){
 char slowo[255];
 printf("podaj slowo: ");
 
-scanf("%s", &slowo);
+scanf("%s", slowo);
 
 strcpy(tab[i].word,slowo);
 
