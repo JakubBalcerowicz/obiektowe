@@ -5,7 +5,6 @@ public class AroundYaxis : MonoBehaviour
     private float period = 0.1f;
     void Update()
     {
-        //timeSinceLevelLoad time for scene started to move obcjekt axe Z
         if (Time.timeSinceLevelLoad >= nextActionTime)
         {
             nextActionTime += period;
