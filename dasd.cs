@@ -1,16 +1,16 @@
-public class AroundYaxis : MonoBehaviour
-{
-    float rotationNumber = 10;
-    private float nextActionTime = 0.0f;
-    private float period = 0.1f;
-    void Update()
-    {
-        if (Time.timeSinceLevelLoad >= nextActionTime)
+    
+if(life == 1,2,3)
         {
-            nextActionTime += period;
-            var rotationVector = transform.rotation.eulerAngles;
-            rotationVector.y = rotationVector.y + rotationNumber;
-            transform.rotation = Quaternion.Euler(rotationVector);
+            stoper = false;
+            life3 = GameObject.Find("life3");
+            life3.SetActive(false);
+        
+            UpdateScore();
+            youWin = false;
+            moveAllowed = true;
+            isDead = false;
+        
+            rb = GetComponent<Rigidbody2D>();
+            anim = GetComponent<Animator>();
+            anim.SetBool("BallDead", isDead);
         }
-    }
-}
