@@ -207,18 +207,17 @@ public class BallControlScript : MonoBehaviour {
                   //  Invoke("RestartScene", 1f);
 
                 }
-
+		  
                 if (life == 2 && stoper == false)
                 {
+		    moveAllowed = false;
                     life = 1;
                     stoper = true;
-                    // then ball movement is stopped
+
                     rb.velocity = new Vector2(0, 0);
 
-                    // Set Animators BallDead variable to true to switch to 
                     anim.SetBool("BallDead", isDead);
                     
-
                     Invoke("RestartScene", 1f);
 
                 }
@@ -282,10 +281,8 @@ public class BallControlScript : MonoBehaviour {
             
             if (Time.time >= nextTime)
             {
-            //get other positon in 0.5sec Y
             var pos = rb.transform.position;
                 
-                //if |Y-Y'|<1 flip ball
                 if(pos.y - actualY < 1 && pos.y - actualY > -1)
                 {
                  nextTime += interval;
@@ -300,7 +297,7 @@ public class BallControlScript : MonoBehaviour {
                     nextTime += interval;
                     Yrotate++;
                 }
-        }
+            }
             
     }
 
