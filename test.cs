@@ -272,12 +272,13 @@ public class BallControlScript : MonoBehaviour {
         Screen.sleepTimeout = SleepTimeout.NeverSleep;
 
         //get actual postion ball Y
-        if (Time.time >= nextTime1)
-        {
-            var pos1 = rb.transform.position;
-            actualY = pos1.y;
-            nextTime1 += interval;
-        }
+	    
+            if (Time.time >= nextTime1)
+            {
+                 var pos1 = rb.transform.position;
+                 actualY = pos1.y;
+                 nextTime1 += interval;
+            }
             
             if (Time.time >= nextTime)
             {
